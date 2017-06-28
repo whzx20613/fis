@@ -142,13 +142,6 @@
             <artifactId>commons-vfs</artifactId>
         </dependency>
 
-
-
-        <dependency>
-            <artifactId>bpep-redis</artifactId>
-            <groupId>com.bestpay</groupId>
-        </dependency>
-
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk16</artifactId>

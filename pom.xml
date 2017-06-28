@@ -54,20 +54,6 @@
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <commons-logging.version>1.1.1</commons-logging.version>
 
-        <!-- 2.0包 -->
-        <bpep-bestpay-foundation.version>2.2.0</bpep-bestpay-foundation.version>
-        <bpep-validator.version>2.0.0</bpep-validator.version>
-        <bpep-acct-service-api.version>2.0.0</bpep-acct-service-api.version>
-        <bpep-acct-query-service-api.version>2.0.0</bpep-acct-query-service-api.version>
-
-        <!-- 交费易包 -->
-        <bppe-badapter-api.version>2.3.0</bppe-badapter-api.version>
-        <bppe-pec-service-api.version>1.0.10</bppe-pec-service-api.version>
-        <bppe-cms-api.version>1.2.0</bppe-cms-api.version>
-        <common.version>1.1.1-20160510</common.version>
-        <portal-service-api.version>1.12.0</portal-service-api.version>
-        <bppe-pca-service-api.version>1.9.0</bppe-pca-service-api.version>
-        <bppe-customer-service-api.version>1.5.0-SNAPSHOT</bppe-customer-service-api.version>
     </properties>
 
     <dependencyManagement>
@@ -240,11 +226,6 @@
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>com.bestpay.bppe.bppe-customer-service</groupId>
-                <artifactId>bppe-customer-service-api</artifactId>
-                <version>${bppe-customer-service-api.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>log4j-over-slf4j</artifactId>
                 <version>${log4j-over-slf4j.version}</version>
@@ -324,60 +305,7 @@
                 <artifactId>commons-vfs</artifactId>
                 <version>${commons-vfs.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.bestpay.bppe.commons</groupId>
-                <artifactId>bppe-common</artifactId>
-                <version>${common.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>javax.validation</groupId>
-                        <artifactId>validation-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.hibernate</groupId>
-                        <artifactId>hibernate-validator</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.hibernate</groupId>
-                        <artifactId>hibernate-validator-annotation-processor</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <artifactId>bpep-redis</artifactId>
-                <groupId>com.bestpay</groupId>
-                <version>1.0.6.RELEASE</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <groupId>org.apache.maven.plugins</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <groupId>org.apache.maven.plugins</groupId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-log4j12</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>jcl-over-slf4j</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>log4j-over-slf4j</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>log4j</groupId>
-                        <artifactId>log4j</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>
@@ -406,11 +334,7 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <filters>
-                        <filter>-com.bestpay.bppe.badapter.Bootstrap</filter>
-                    </filters>
-                </configuration>
+
             </plugin>
         </plugins>
     </build>
